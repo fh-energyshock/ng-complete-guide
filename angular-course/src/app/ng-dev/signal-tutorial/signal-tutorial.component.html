@@ -1,7 +1,3 @@
-<p>Signal: {{ firstName() }}</p>
-
-<button (click)="activateDate()">Activate Date</button>
-<button (click)="deactivateDate()">Deactivate Date</button>
-<span *ngIf="showDateDuration()">{{
-  showCurrentTimestamp() | date : "dd.MM.YYYY hh:mm:ss"
-}}</span>
+<button (click)="updateCount()">Show Count</button>
+<button (click)="showCount.set(false)">Hide Count</button>
+<span>{{ conditionalCount() }}</span>
