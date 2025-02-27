@@ -1,10 +1,5 @@
-import {
-  Component,
-  effect,
-  Input,
-  signal,
-  WritableSignal,
-} from '@angular/core';
+import { Component, effect } from '@angular/core';
+import { SignalService } from '../signal.service';
 
 @Component({
   selector: 'signal-child',
@@ -13,15 +8,13 @@ import {
   styleUrl: './child.component.scss',
 })
 export class ChildComponent {
-  @Input() count: WritableSignal<number> = signal(0);
-  // The effect can be created in the constructor or as a field which provides a descriptive name
   private loggingEffect = effect(() => {
-    console.log(`The count is: ${this.count()}`);
+    console.log(`The count is: ${this._signalService.count}`);
   });
 
-  constructor() {
+  constructor(private _signalService: SignalService) {
     effect(() => {
-      console.log(`The constructor count is: ${this.count()}`);
+      console.log(`The constructor count is: ${this._signalService.count}`);
     });
   }
 }
