@@ -1,3 +1,4 @@
 <button (click)="updateCount()">Show Count</button>
 <button (click)="showCount.set(false)">Hide Count</button>
 <span>{{ conditionalCount() }}</span>
+<signal-child [count]="count"></signal-child>

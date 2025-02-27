@@ -7,10 +7,11 @@ import {
   signal,
   WritableSignal,
 } from '@angular/core';
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-signal-tutorial',
-  imports: [CommonModule],
+  imports: [CommonModule, ChildComponent],
   templateUrl: './signal-tutorial.component.html',
   styleUrl: './signal-tutorial.component.scss',
 })
